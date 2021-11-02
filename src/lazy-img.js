@@ -10,12 +10,7 @@
 
     class LazyImg {
         constructor(targets) {
-
-            if(typeof targets !== 'string') {
-                throw new Error('Type of "targets" option should be a "string"');
-            }
-
-            this.targets = [targets];
+            this.targets = targets ? [targets] : ['img'];
             this.init();
         }
 
@@ -24,7 +19,7 @@
 
             let observer = new IntersectionObserver(
                 function(entries, observer) {
-                    entries.forEach((entry, index) => {
+                    entries.forEach((entry) => {
                         if(entry.isIntersecting) {
                             entry.target.src = entry.target.dataset.src;
                             observer.unobserve(entry.target);
