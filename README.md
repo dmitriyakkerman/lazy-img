@@ -2,13 +2,19 @@
 
 **Usage**
 
-1.Connect lazy-img.min.js.
+1. Create image element with "data-src" attribute:
+
+```html 
+<img src="" data-src="image.jpg" alt="">
+```
+
+2. Connect lazy-img.min.js.
 
 ```js 
 <script src="lazy-img.min.js"></script>
 ```
 
-2.Init plugin.
+3 .Init plugin.
 
 ```js
 LazyImg.init() // all 'img' tags

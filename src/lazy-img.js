@@ -10,7 +10,13 @@
 
     class LazyImg {
         constructor(targets) {
-            this.targets = targets ? [targets] : ['img'];
+            if(typeof targets === 'string') {
+                this.targets = targets ? [targets] : ['img'];
+            }
+            else {
+                throw new Error('Target must be a string')
+            }
+
             this.init();
         }
 
