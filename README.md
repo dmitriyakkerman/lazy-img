@@ -2,7 +2,7 @@
 
 **Usage**
 
-1. Create image element with "data-src" attribute:
+1. Create image element with _**data-srс**_ attribute:
 
 ```html 
 <img src="" data-src="image.jpg" alt="">
@@ -11,7 +11,7 @@
 2. Connect lazy-img.min.js.
 
 ```js 
-<script src="lazy-img.min.js"></script>
+<script src="./dist/lazy-img.min.js"></script>
 ```
 
 3 .Init plugin.
