@@ -1,3 +1,5 @@
+import {defaults} from "./defaults";
+
 (function (root, factory) {
     if (typeof define === 'function' && define.amd) {
         define([], factory);
@@ -9,7 +11,7 @@
 }(typeof self !== 'undefined' ? self : this, function () {
 
     class LazyImg {
-        constructor(targets) {
+        constructor(targets, rootMargin, threshold) {
             if(typeof targets === 'string') {
                 this.targets = targets ? [targets] : ['img'];
             }
@@ -33,8 +35,8 @@
                     });
                 },
                 {
-                    rootMargin: '0px',
-                    threshold: 0,
+                    rootMargin: that.rootMargin || defaults.rootMargin,
+                    threshold: that.threshold || defaults.threshold,
                 });
 
             let targets = document.querySelectorAll(that.targets);
@@ -44,8 +46,8 @@
         }
     }
 
-    LazyImg.init = function(targets) {
-        return new LazyImg(targets)
+    LazyImg.init = function(targets, rootMargin, threshold) {
+        return new LazyImg(targets, rootMargin, threshold)
     };
 
     window.LazyImg = LazyImg;

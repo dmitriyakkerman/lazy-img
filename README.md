@@ -17,8 +17,9 @@
 3 .Init plugin.
 
 ```js
-LazyImg.init() // all 'img' tags
-LazyImg.init('.lazy') // specific img selector 
+LazyImg.init() // all 'img' tags with default "rootMargin" and "threshold"
+LazyImg.init(".lazy") // specific img selector with default "rootMargin" and "threshold"
+LazyImg.init(".lazy", "50px", 0.5) // specific img selector with specific "rootMargin" and "threshold" 
 ```
      
 **Params**
@@ -29,3 +30,17 @@ Target element.
 *Type:* String  
 *Required:* false  
 *Default:* 'img'
+
+##### `param2`
+RootMargin. Native Intersection Observer parameter for margin around the image element.
+
+*Type:* String  
+*Required:* false  
+*Default:* '0px'
+
+##### `param3`
+Threshold. Native Intersection Observer parameter which indicates at what percentage of the image element visibility the lazy loading should be executed.
+
+*Type:* Number  
+*Required:* false  
+*Default:* 0
