@@ -14,6 +14,8 @@ import {defaults} from "./defaults";
         constructor(targets, rootMargin, threshold) {
             if(typeof targets === 'string') {
                 this.targets = targets ? [targets] : ['img'];
+                this.rootMargin = rootMargin;
+                this.threshold = threshold;
             }
             else {
                 throw new Error('Target must be a string')
