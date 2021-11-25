@@ -1,5 +1,7 @@
 # lazy-img
 
+Simple images lazy load module 
+
 **Usage**
 
 1. Create image element with _**data-srс**_ attribute:
