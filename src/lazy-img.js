@@ -11,7 +11,7 @@ import {defaults} from "./defaults";
 }(typeof self !== 'undefined' ? self : this, function () {
 
     class LazyImg {
-        constructor(targets, rootMargin, threshold) {
+        constructor(targets = '', rootMargin, threshold) {
             if(typeof targets === 'string') {
                 this.targets = targets ? [targets] : ['img'];
                 this.rootMargin = rootMargin;
